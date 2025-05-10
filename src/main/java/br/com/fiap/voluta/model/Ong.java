@@ -10,7 +10,8 @@ import java.util.List;
 public class Ong {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ_ONGS")
+    @SequenceGenerator(name = "SEQ_ONGS", sequenceName = "SEQ_ONGS", allocationSize = 1)
     @Column(name = "ong_id")
     private Long id;
 
