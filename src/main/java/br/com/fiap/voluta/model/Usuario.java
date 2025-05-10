@@ -16,6 +16,7 @@ public class Usuario implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "usuario_id")
     private Long id;
 
     private String apelido;
@@ -26,6 +27,10 @@ public class Usuario implements UserDetails {
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @ManyToOne
+    @JoinColumn(name = "ong_id")
+    private Ong ong;
 
     public Usuario() {
     }
@@ -90,6 +95,14 @@ public class Usuario implements UserDetails {
 
     public void setRole(Role role) {
         this.role = role;
+    }
+
+    public Ong getOng() {
+        return ong;
+    }
+
+    public void setOng(Ong ong) {
+        this.ong = ong;
     }
 
     @Override
