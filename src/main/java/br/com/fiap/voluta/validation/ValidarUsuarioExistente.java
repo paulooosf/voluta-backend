@@ -8,7 +8,8 @@ import java.util.Optional;
 
 @Component
 public class ValidarUsuarioExistente {
-    private ValidarUsuarioExistente(){
+
+    private ValidarUsuarioExistente() {
     }
 
     public static void validar(Optional<Usuario> usuarioOpt) {
